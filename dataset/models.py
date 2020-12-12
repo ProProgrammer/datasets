@@ -11,3 +11,6 @@ class Dataset(AbstractTimeStampModel):
     """
 
     file = models.FileField(blank=False, null=False)
+
+    def __str__(self):
+        return f'File: {self.file.name}'
