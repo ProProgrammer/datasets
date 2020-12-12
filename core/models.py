@@ -11,8 +11,8 @@ class AbstractTimeStampModel(models.Model):
     # All models inheriting form AbstractTimeStampModel will have `uuid` field as their primary key
     uuid = models.UUIDField(default=uuid.uuid4, editable=False, primary_key=True)
 
-    created = models.DateTimeField('Date created')
-    modified = models.DateTimeField('Date updated')
+    created = models.DateTimeField('Date created', null=True, blank=True)
+    modified = models.DateTimeField('Date updated', null=True, blank=True)
 
     class Meta:
         abstract = True
